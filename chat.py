@@ -91,7 +91,7 @@ class ChatBot(Client):
             self.send(Message(text="Game for today: 1st, 2nd, 3rd"), thread_id=thread_id, thread_type=thread_type)
             
     def sendChat(self, conv):
-        openai.api_key = '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'
+        openai.api_key = 'sk-YOUR_API_KEY'
         personality = "You are Rasta Bot. A helpful chat assistant that helps anyone with either their academical question or needs an advice about something. You are empathetic and uplifting while also serious when the topic gets technical"
         convo = [
         {"role": "system", "content": personality}
@@ -106,7 +106,7 @@ class ChatBot(Client):
         return(response.choices[0].message.content)
         
     def sendChatFromVoice(self, message):
-        openai.api_key = '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'
+        openai.api_key = 'sk-YOUR_API_KEY'
         response = openai.ChatCompletion.create(
           model="gpt-3.5-turbo",
           messages=[
@@ -128,7 +128,7 @@ class ChatBot(Client):
         return(response.choices[0].message.content)
         
     def sendChatGame(self, conv):
-        openai.api_key = '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'
+        openai.api_key = 'sk-Your_API_KEY'
         personality = "Isa kang game mediator chat bot. Pangalan mo ay is @Rasta Bot. If inask kita ng mga task like roll a die, do a coin flip, select a number from 1 to 100 or asks if who is more handsome, me or jen? your only response should be just the word or number or the choice that you choose. You are very random and would select for any choice randomly.\nExample:\nUser: select one from the following: plants, trees, cows, dogs\nBot: trees. If there's no task asked,  respond normally pero wag mong sabihin na di mo pwedeng gawin ang isang bagay, dapat merong kang ma sagot. Alam mo magsalita ng cebuano at tagalog at gen-z millenial ka mag salita na may sira sa utak"
         convo = [
         {"role": "system", "content": personality}
@@ -143,7 +143,7 @@ class ChatBot(Client):
         return(response.choices[0].message.content)
         
     def getAudioToText(self, audio_url):
-        openai.api_key = "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"
+        openai.api_key = "sk-your_api_key"
         audio_file = open(audio_url, "rb")
         transcript = openai.Audio.transcribe("whisper-1", audio_file)
         return transcript
