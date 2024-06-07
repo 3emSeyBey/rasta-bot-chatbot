@@ -29,7 +29,7 @@ Rasta Bot is a Facebook Messenger chatbot that leverages the fbchat module and O
 
 1. **Run the bot:**
     ```sh
-    python rasta_bot.py
+    python chat.py
     ```
 
 2. **Interacting with the bot:**
